@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POS_WEB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body{
+            overflow: hidden;
+        }
+
+        .crudSection{
+            /*width: 40vw;*/
+            background-color: #4b9193;
+            box-sizing: border-box;
+            padding: 1rem 3rem;
+            /*border-radius: 4%;*/
+            /*margin: 0.5rem;*/
+        }
+
+        .box-container{
+            /*width: 40vw;*/
+            background-color: #4b9193;
+            box-sizing: border-box;
+            padding: 1rem 3rem;
+            /*border-radius: 4%;*/
+            margin: 0.5rem;
+        }
+
+        .container{
+            box-sizing: border-box;
+
+        }
+
+        main{
+            margin: auto;
+            width:90vw;
+            /*height: 100vh;*/
+            overflow: hidden;
+            padding-top: 4rem;
+        }
+
+        .searchTableSection{
+            box-sizing: border-box;
+            padding: 1.5rem;
+            background-color: #4b9193;
+            /*border-radius: 4%;*/
+        }
+
+        .table{
+            border: black 1px solid;
+            border-radius: 100px;
+
+        }
+
+        @media (max-width: 320px) {
+            button{
+                width: ;
+            }
+        }
+
+
+
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+<!-------------------------------------------HEADER SECTION-------------------------------------------------------->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">SD POS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#orderSection">ORDERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#customerSection">CUSTOMER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#itemSection">ITEM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> ORDER_DETAIL</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-------------------------------------------CUSTOMER SECTION-------------------------------------------------------->
+<main id="customerSection">
+    <h1 class="text-center">CUSTOMER</h1>
+<!--2 SECTIONS-->
+    <div class="row">
+    <!--CRUD SECTION-->
+    <section class="container crudSection col col-md-6 col-lg-6 col-md-12 col-sm-12 col-12" >
+        <div >
+        <form>
+            <div class="mb-3 ">
+                <label for="inputCustomerId" class="form-label">Customer Id</label>
+                <input type="text" class="form-control" id="inputCustomerId" aria-describedby="idHelp">
+            </div>
+            <div class="mb-3 ">
+                <label for="inputCustomerName" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="inputCustomerName">
+            </div>
+            <div class="mb-3 ">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress">
+            </div>
+
+          <div class="mb-3 " >
+                <label for="inputTelephoneNo" class="form-label">Telephone No:</label>
+                <input type="text" class="form-control" id="inputTelephoneNo">
+            </div>
+
+            <div >
+
+            <button type="button" class="btn btn-primary">SAVE</button>
+            <button type="button" class="btn btn-primary">UPDATE</button>
+            <button type="button" class="btn btn-primary">DELETE</button>
+            <button type="reset" class="btn btn-primary">CLEAR</button>
+            </div>
+
+        </form>
+        </div>
+    </section>
+
+    <!--SEARCH SECTION & TABLE-->
+    <section  class="container col col-lg-6 col-md-12 col-sm-12 col-12 searchTableSection" >
+     <h5>SEARCH CUSTOMER</h5>
+    <div class="row" >
+        <div class="mb-3 col ">
+            <label for="inputCustomerTel" class="form-label">Customer Tel</label>
+            <input type="text" class="form-control" id="inputCustomerTel" aria-describedby="idHelp">
+        </div>
+        <div class="mb-3 col">
+            <label for="inputCustomerName1" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="inputCustomerName1">
+        </div>
+
+
+    </div>
+
+    <!--TABLE SECTION-->
+    <div class="border-dark rounded-2 Table">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">ADRESS</th>
+                <th scope="col">TEL</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>sheul</td>
+                <td>Maggona</td>
+                <td>0718307738</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>sheul</td>
+                <td>Maggona</td>
+                <td>0718307738</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>sheul</td>
+                <td>Maggona</td>
+                <td>0718307738</td>
+            </tr>
+
+            <tr>
+                <th scope="row">4</th>
+                <td>sheul</td>
+                <td>Maggona</td>
+                <td>0718307738</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    </section>
+
+    </div>
+
+</main>
+
+
+
+
+
+<!---------------------------------------------ITEM SECTION---------------------------------------------------------->
+<main id="itemSection">
+    <h1 class="text-center">ITEM</h1>
+    <!--2 SECTIONS-->
+    <div class="row">
+        <!--CRUD SECTION-->
+        <section class="container crudSection  col col-lg-6 col-md-12 col-sm-12 col-12" >
+            <div >
+                <form>
+                    <div class="mb-3 ">
+                        <label for="inputItemId" class="form-label">Item Code</label>
+                        <input type="text" class="form-control" id="inputItemId" aria-describedby="idHelp">
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="inputItemDesc" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="inputItemDesc">
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="inputPrice" class="form-label">Unit Price</label>
+                        <input type="text" class="form-control" id="inputPrice">
+                    </div>
+
+                    <div class="mb-3 " >
+                        <label for="inputQty" class="form-label">Quantity</label>
+                        <input type="text" class="form-control" id="inputQty">
+                    </div>
+
+                    <div >
+
+                        <button type="button" class="btn btn-primary">SAVE</button>
+                        <button type="button" class="btn btn-primary">UPDATE</button>
+                        <button type="button" class="btn btn-primary">DELETE</button>
+                        <button type="reset" class="btn btn-primary">CLEAR</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <!--SEARCH SECTION & TABLE-->
+        <section  class="container col-lg-6 col-md-12 col-sm-12 col-12 col searchTableSection" >
+            <h5>SEARCH ITEM </h5>
+            <div class="row" >
+                <div class="mb-3 col ">
+                    <label for="inputItemCode" class="form-label">Item Code</label>
+                    <input type="text" class="form-control" id="inputItemCode" aria-describedby="idHelp">
+                </div>
+                <div class="mb-3 col">
+                    <label for="inputDesc" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="inputDesc">
+                </div>
+
+
+            </div>
+
+            <!--TABLE SECTION-->
+            <div class="border-dark rounded-2 cusTable ">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">CODE</th>
+                        <th scope="col">DESCRIPTION</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">QTY</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Soap</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Soap</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Soap</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Soap</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+<!-----------------------------------------ORDER SECTION------------------------------------------------------------>
+<main id="orderSection">
+<!--    <h5 class="text-center">PLACR ORDER</h5>-->
+<!--section col one-->
+    <div class="row">
+    <!--2 SECTIONS-->
+            <div class="row col col-lg-6 col-md-12 col-sm-12 col-12 col">
+                <!--INVOICE SECTION-->
+                <section class="container" class="col" >
+
+                    <div class="box-container">
+                        <h5>INVOICE DETAILS</h5>
+                        <form>
+                            <div class="row">
+                                <div class="mb-3 col ">
+                                    <label for="inputOrderId" class="form-label">Order Id</label>
+                                    <input type="text" class="form-control" id="inputOrderId" aria-describedby="idHelp">
+                                </div>
+                                <div class="mb-3 col">
+                                    <label for="inputItemDesc" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="inputDate">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label for="inputCustomerId1" class="form-label">Customer Id</label>
+                                    <input type="text" class="form-control" id="inputCustomerId1">
+                                </div>
+
+                                <div class="mb-3 col" >
+                                    <label for="inputQty" class="form-label">Customer Name</label>
+                                    <select class="form-select" id="custId">
+                                        <option selected>select the customer</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+
+                    <div class="box-container">
+                        <h5>ITEM DETAILS</h5>
+                        <form>
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label for="inputCode1" class="form-label">Item Code</label>
+                                    <select class="form-select" id="inputCode1">
+                                        <option selected>select the Coder</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col">
+                                    <label for="inputDesc1" class="form-label">Description</label>
+                                    <input type="date" class="form-control" id="inputDesc1">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label for="inputQtyOnHand" class="form-label">Qty OnHand</label>
+                                    <input type="text" class="form-control" id="inputQtyOnHand">
+                                </div>
+
+                                <div class="mb-3 col">
+                                    <label for="inputUnitPrice" class="form-label">Unit Price</label>
+                                    <input type="text" class="form-control" id="inputUnitPrice" aria-describedby="idHelp">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label for="inputOrderQty" class="form-label">Order Qty</label>
+                                    <input type="text" class="form-control" id="inputOrderQty" aria-describedby="idHelp">
+                                </div>
+
+                                <div class="col pt-4">
+
+                                    <button type="button" class="btn btn-primary">Add To Cart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+
+<!--section col 2 -->
+        <div class="col">
+            <div class="border-dark rounded-2 odTable box-container">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">DESC</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">QTY</th>
+                        <th scope="col">TOTAL</th>
+                        <th scope="col">REMOVE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">SOAP</th>
+                        <td>200</td>
+                        <td>3</td>
+                        <td>6000</td>
+                        <td>
+<!--                            <button type="reset">remove</button>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SOAP</th>
+                        <td>200</td>
+                        <td>3</td>
+                        <td>6000</td>
+                        <td>
+<!--                            <button type="reset">remove</button>-->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">SOAP</th>
+                        <td>200</td>
+                        <td>3</td>
+                        <td>6000</td>
+                        <td>
+<!--                            <button type="reset">remove</button>-->
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <section class="col">
+                <div class="box-container">
+                    <h5>PAYMENT</h5>
+                    <form>
+
+                        <div class="mb-3 row" >
+                            <label for="netTotal" class="form-label col">Net Total: <span id="netTotal">....</span></label>
+                            <label for="subTotal" class="form-label col">Sub Total: <span id="subTotal">....</span></label>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputDiscount" class="form-label">Discout:</label>
+                                <input type="text" class="form-control" id="inputDiscount">
+                            </div>
+                            <div class="mb-3 col">
+                                <label for="inputCash" class="form-label ">Cash:</label>
+                                <input type="text" class="form-control" id="inputCash">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-4">
+                            <label for="inputBalance" class="form-label">Balance:</label>
+                            <input type="text" class="form-control" id="inputBalance" aria-describedby="idHelp">
+                        </div>
+
+
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</main>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
