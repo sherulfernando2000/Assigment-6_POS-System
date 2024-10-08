@@ -5,35 +5,57 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>POS_WEB</title>
+    <title>POS-web</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 
     <style>
         body{
-            overflow: hidden;
+            background-color: rgba(18, 18, 18, 0.1);
         }
 
         .crudSection{
             /*width: 40vw;*/
-            background-color: #4b9193;
+            background-color: #ffffff;
             box-sizing: border-box;
             padding: 1rem 3rem;
             /*border-radius: 4%;*/
             /*margin: 0.5rem;*/
+            box-shadow: 10px 14px 5px 0px rgba(0,0,0,0.75);
         }
 
         .box-container{
             /*width: 40vw;*/
-            background-color: #4b9193;
+            background-color: #ffffff;
             box-sizing: border-box;
             padding: 1rem 3rem;
             /*border-radius: 4%;*/
             margin: 0.5rem;
+            box-shadow: 10px 14px 5px 0px rgba(0,0,0,0.75);
         }
 
         .container{
             box-sizing: border-box;
 
+        }
+
+        #homeSection {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("assets/store.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        #homeSection h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        #homeSection p {
+            font-size: 1.5rem;
         }
 
         main{
@@ -42,6 +64,26 @@
             /*height: 100vh;*/
             overflow: hidden;
             padding-top: 4rem;
+        }
+
+        #customerSection>div:first-child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #customerSection>div:first-child>i{
+            margin-bottom: 10px;
+        }
+
+        #itemSection>div:first-child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #itemSection>div:first-child>i{
+            margin-bottom: 10px;
         }
 
         .searchTableSection{
@@ -57,12 +99,36 @@
 
         }
 
+        i{
+            display: inline ;
+            font-size: 2rem;
+        }
+
         @media (max-width: 320px) {
             button{
-                width: ;
+                /*width: ;*/
             }
         }
 
+        @media (min-width: 830px){
+            .col-md-5{
+                width: 41.66666667%;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .mybutton{
+                padding: 0.25rem 0.5rem;
+                font-size: 0.7em;
+                border-radius: 0.2rem;
+            }
+        }
+
+        nav>div>a{
+            font-style: italic;
+            font-weight: bold;
+
+        }
 
 
 
@@ -75,25 +141,25 @@
 <body>
 
 <!-------------------------------------------HEADER SECTION-------------------------------------------------------->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navBar">
     <div class="container">
-        <a class="navbar-brand" href="#">SD POS</a>
+        <a class="navbar-brand" href="#homeSection">SD POS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#orderSection">ORDERS</a>
+                    <a class="nav-link" href="order.html">ORDERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#customerSection">CUSTOMER</a>
+                    <a class="nav-link" href="customer.html">CUSTOMER</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#itemSection">ITEM</a>
+                    <a class="nav-link" href="item.html">ITEM</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"> ORDER_DETAIL</a>
@@ -104,104 +170,120 @@
 </nav>
 
 
-<!-------------------------------------------CUSTOMER SECTION-------------------------------------------------------->
+
+
+<!---------------------------------------------- Home Section--------------------------------------------------------->
+<section id="homeSection">
+    <div class="text-center">
+        <h1>Welcome to SD POS</h1>
+        <p>Your all-in-one point of sale system</p>
+    </div>
+</section>
+
+
+<!--
+&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;CUSTOMER SECTION&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
 <main id="customerSection">
-    <h1 class="text-center">CUSTOMER</h1>
-<!--2 SECTIONS-->
-    <div class="row">
-    <!--CRUD SECTION-->
-    <section class="container crudSection col col-md-6 col-lg-6 col-md-12 col-sm-12 col-12" >
-        <div >
-        <form>
-            <div class="mb-3 ">
-                <label for="inputCustomerId" class="form-label">Customer Id</label>
-                <input type="text" class="form-control" id="inputCustomerId" aria-describedby="idHelp">
-            </div>
-            <div class="mb-3 ">
-                <label for="inputCustomerName" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" id="inputCustomerName">
-            </div>
-            <div class="mb-3 ">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress">
-            </div>
+    <div>
+         <i class="fa-solid fa-user"></i>
+         <h1 class="text-center">CUSTOMER</h1>
+    </div>
 
-          <div class="mb-3 " >
-                <label for="inputTelephoneNo" class="form-label">Telephone No:</label>
-                <input type="text" class="form-control" id="inputTelephoneNo">
-            </div>
-
+    &lt;!&ndash;2 SECTIONS&ndash;&gt;
+    <div class="row container-fluid">
+        &lt;!&ndash;CRUD SECTION&ndash;&gt;
+        <section class=" card crudSection col-12 col-md-5 m-3 " >
             <div >
+                <form>
+                    <div class="mb-3 ">
+                        <label for="inputCustomerId" class="form-label">Customer Id</label>
+                        <input type="text" class="form-control" id="inputCustomerId" aria-describedby="idHelp">
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="inputCustomerName" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="inputCustomerName">
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                    </div>
 
-            <button type="button" class="btn btn-primary">SAVE</button>
-            <button type="button" class="btn btn-primary">UPDATE</button>
-            <button type="button" class="btn btn-primary">DELETE</button>
-            <button type="reset" class="btn btn-primary">CLEAR</button>
+                    <div class="mb-3 " >
+                        <label for="inputTelephoneNo" class="form-label">Telephone No:</label>
+                        <input type="text" class="form-control" id="inputTelephoneNo">
+                    </div>
+
+                    <div >
+
+                        <button type="button" class="btn btn-success btn-sm mybutton">SAVE</button>
+                        <button type="button" class="btn btn-success btn-sm mybutton">UPDATE</button>
+                        <button type="button" class="btn btn-danger   btn-sm mybutton">DELETE</button>
+                        <button type="reset" class="btn btn-success btn-sm mybutton">CLEAR</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        &lt;!&ndash;SEARCH SECTION & TABLE&ndash;&gt;
+        <section  class="card crudSection col m-3 card" >
+            <h5>SEARCH CUSTOMER</h5>
+            <div class="row" >
+                <div class="mb-3 col ">
+                    <label for="inputCustomerTel" class="form-label">Customer Tel</label>
+                    <input type="text" class="form-control" id="inputCustomerTel" aria-describedby="idHelp">
+                </div>
+                <div class="mb-3 col">
+                    <label for="inputCustomerName1" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="inputCustomerName1">
+                </div>
+
+
             </div>
 
-        </form>
-        </div>
-    </section>
+            &lt;!&ndash;TABLE SECTION&ndash;&gt;
+            <div class="border-dark rounded-2 Table">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">ADRESS</th>
+                        <th scope="col">TEL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>sheul</td>
+                        <td>Maggona</td>
+                        <td>0718307738</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>sheul</td>
+                        <td>Maggona</td>
+                        <td>0718307738</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>sheul</td>
+                        <td>Maggona</td>
+                        <td>0718307738</td>
+                    </tr>
 
-    <!--SEARCH SECTION & TABLE-->
-    <section  class="container col col-lg-6 col-md-12 col-sm-12 col-12 searchTableSection" >
-     <h5>SEARCH CUSTOMER</h5>
-    <div class="row" >
-        <div class="mb-3 col ">
-            <label for="inputCustomerTel" class="form-label">Customer Tel</label>
-            <input type="text" class="form-control" id="inputCustomerTel" aria-describedby="idHelp">
-        </div>
-        <div class="mb-3 col">
-            <label for="inputCustomerName1" class="form-label">Customer Name</label>
-            <input type="text" class="form-control" id="inputCustomerName1">
-        </div>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>sheul</td>
+                        <td>Maggona</td>
+                        <td>0718307738</td>
+                    </tr>
+                    </tbody>
+                </table>
 
+            </div>
 
-    </div>
-
-    <!--TABLE SECTION-->
-    <div class="border-dark rounded-2 Table">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">NAME</th>
-                <th scope="col">ADRESS</th>
-                <th scope="col">TEL</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>sheul</td>
-                <td>Maggona</td>
-                <td>0718307738</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>sheul</td>
-                <td>Maggona</td>
-                <td>0718307738</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>sheul</td>
-                <td>Maggona</td>
-                <td>0718307738</td>
-            </tr>
-
-            <tr>
-                <th scope="row">4</th>
-                <td>sheul</td>
-                <td>Maggona</td>
-                <td>0718307738</td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-    </section>
+        </section>
 
     </div>
 
@@ -211,13 +293,17 @@
 
 
 
-<!---------------------------------------------ITEM SECTION---------------------------------------------------------->
+&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;ITEM SECTION&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
 <main id="itemSection">
-    <h1 class="text-center">ITEM</h1>
-    <!--2 SECTIONS-->
-    <div class="row">
-        <!--CRUD SECTION-->
-        <section class="container crudSection  col col-lg-6 col-md-12 col-sm-12 col-12" >
+    <div>
+        <i class="fa-solid fa-gift"></i>
+        <h1 class="text-center">ITEM</h1>
+    </div>
+
+    &lt;!&ndash;2 SECTIONS&ndash;&gt;
+    <div class="row container-fluid">
+        &lt;!&ndash;CRUD SECTION&ndash;&gt;
+        <section class="card crudSection col-12 col-md-5 col m-3" >
             <div >
                 <form>
                     <div class="mb-3 ">
@@ -240,18 +326,18 @@
 
                     <div >
 
-                        <button type="button" class="btn btn-primary">SAVE</button>
-                        <button type="button" class="btn btn-primary">UPDATE</button>
-                        <button type="button" class="btn btn-primary">DELETE</button>
-                        <button type="reset" class="btn btn-primary">CLEAR</button>
+                        <button type="button" class="btn btn-success">SAVE</button>
+                        <button type="button" class="btn btn-success">UPDATE</button>
+                        <button type="button" class="btn btn-danger">DELETE</button>
+                        <button type="reset" class="btn btn-success">CLEAR</button>
                     </div>
 
                 </form>
             </div>
         </section>
 
-        <!--SEARCH SECTION & TABLE-->
-        <section  class="container col-lg-6 col-md-12 col-sm-12 col-12 col searchTableSection" >
+        &lt;!&ndash;SEARCH SECTION & TABLE&ndash;&gt;
+        <section  class="card crudSection col m-3" >
             <h5>SEARCH ITEM </h5>
             <div class="row" >
                 <div class="mb-3 col ">
@@ -266,7 +352,7 @@
 
             </div>
 
-            <!--TABLE SECTION-->
+            &lt;!&ndash;TABLE SECTION&ndash;&gt;
             <div class="border-dark rounded-2 cusTable ">
                 <table class="table">
                     <thead>
@@ -314,102 +400,103 @@
 
 </main>
 
-<!-----------------------------------------ORDER SECTION------------------------------------------------------------>
+&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;ORDER SECTION&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
 <main id="orderSection">
-<!--    <h5 class="text-center">PLACR ORDER</h5>-->
-<!--section col one-->
-    <div class="row">
-    <!--2 SECTIONS-->
-            <div class="row col col-lg-6 col-md-12 col-sm-12 col-12 col">
-                <!--INVOICE SECTION-->
-                <section class="container" class="col" >
+    <h1 class="text-center">PLACE ORDER</h1>
+    &lt;!&ndash;section col one&ndash;&gt;
+    <div class="row container-fluid">
+        &lt;!&ndash;2 SECTIONS&ndash;&gt;
+        <div class="row  col col-lg-6 col-md-12 col-sm-12 col-12 col">
+            &lt;!&ndash;INVOICE SECTION&ndash;&gt;
+            <section class="container" class="col" >
 
-                    <div class="box-container">
-                        <h5>INVOICE DETAILS</h5>
-                        <form>
-                            <div class="row">
-                                <div class="mb-3 col ">
-                                    <label for="inputOrderId" class="form-label">Order Id</label>
-                                    <input type="text" class="form-control" id="inputOrderId" aria-describedby="idHelp">
-                                </div>
-                                <div class="mb-3 col">
-                                    <label for="inputItemDesc" class="form-label">Date</label>
-                                    <input type="date" class="form-control" id="inputDate">
-                                </div>
+                <div class="box-container card">
+                    <h5>INVOICE DETAILS</h5>
+                    <form>
+                        <div class="row">
+                            <div class="mb-3 col ">
+                                <label for="inputOrderId" class="form-label">Order Id</label>
+                                <input type="text" class="form-control" id="inputOrderId" aria-describedby="idHelp">
+                            </div>
+                            <div class="mb-3 col">
+                                <label for="inputItemDesc" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="inputDate">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputCustomerId1" class="form-label">Customer Id</label>
+                                <input type="text" class="form-control" id="inputCustomerId1">
                             </div>
 
-                            <div class="row">
-                                <div class="mb-3 col">
-                                    <label for="inputCustomerId1" class="form-label">Customer Id</label>
-                                    <input type="text" class="form-control" id="inputCustomerId1">
-                                </div>
+                            <div class="mb-3 col" >
+                                <label for="inputQty" class="form-label">Customer Name</label>
+                                <select class="form-select" id="custId">
+                                    <option selected>select the customer</option>
 
-                                <div class="mb-3 col" >
-                                    <label for="inputQty" class="form-label">Customer Name</label>
-                                    <select class="form-select" id="custId">
-                                        <option selected>select the customer</option>
+                                </select>
+                            </div>
+                        </div>
 
-                                    </select>
-                                </div>
+
+                    </form>
+                </div>
+
+
+                <div class="box-container card">
+                    <h5>ITEM DETAILS</h5>
+                    <form>
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputCode1" class="form-label">Item Code</label>
+                                <select class="form-select" id="inputCode1">
+                                    <option selected>select the Coder</option>
+
+                                </select>
                             </div>
 
+                            <div class="mb-3 col">
+                                <label for="inputDesc1" class="form-label">Description</label>
+                                <input type="date" class="form-control" id="inputDesc1">
+                            </div>
+                        </div>
 
-                        </form>
-                    </div>
 
-
-                    <div class="box-container">
-                        <h5>ITEM DETAILS</h5>
-                        <form>
-                            <div class="row">
-                                <div class="mb-3 col">
-                                    <label for="inputCode1" class="form-label">Item Code</label>
-                                    <select class="form-select" id="inputCode1">
-                                        <option selected>select the Coder</option>
-
-                                    </select>
-                                </div>
-
-                                <div class="mb-3 col">
-                                    <label for="inputDesc1" class="form-label">Description</label>
-                                    <input type="date" class="form-control" id="inputDesc1">
-                                </div>
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputQtyOnHand" class="form-label">Qty OnHand</label>
+                                <input type="text" class="form-control" id="inputQtyOnHand">
                             </div>
 
+                            <div class="mb-3 col">
+                                <label for="inputUnitPrice" class="form-label">Unit Price</label>
+                                <input type="text" class="form-control" id="inputUnitPrice" aria-describedby="idHelp">
+                            </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="mb-3 col">
-                                    <label for="inputQtyOnHand" class="form-label">Qty OnHand</label>
-                                    <input type="text" class="form-control" id="inputQtyOnHand">
-                                </div>
 
-                                <div class="mb-3 col">
-                                    <label for="inputUnitPrice" class="form-label">Unit Price</label>
-                                    <input type="text" class="form-control" id="inputUnitPrice" aria-describedby="idHelp">
-                                </div>
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputOrderQty" class="form-label">Order Qty</label>
+                                <input type="text" class="form-control" id="inputOrderQty" aria-describedby="idHelp">
                             </div>
 
+                            <div class="col pt-4">
 
-                            <div class="row">
-                                <div class="mb-3 col">
-                                    <label for="inputOrderQty" class="form-label">Order Qty</label>
-                                    <input type="text" class="form-control" id="inputOrderQty" aria-describedby="idHelp">
-                                </div>
-
-                                <div class="col pt-4">
-
-                                    <button type="button" class="btn btn-primary">Add To Cart</button>
-                                </div>
+                                <button type="button" class="btn btn-primary">Add To Cart</button>
                             </div>
-                        </form>
-                    </div>
-                </section>
-            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
 
 
-<!--section col 2 -->
+        &lt;!&ndash;section col 2 &ndash;&gt;
         <div class="col">
-            <div class="border-dark rounded-2 odTable box-container">
+            <div class="border-dark rounded-2 odTable box-container ">
+                <h5>ITEM DETAILS</h5>
                 <table class="table">
                     <thead>
                     <tr>
@@ -427,7 +514,7 @@
                         <td>3</td>
                         <td>6000</td>
                         <td>
-<!--                            <button type="reset">remove</button>-->
+                            &lt;!&ndash;                            <button type="reset">remove</button>&ndash;&gt;
                         </td>
                     </tr>
                     <tr>
@@ -436,7 +523,7 @@
                         <td>3</td>
                         <td>6000</td>
                         <td>
-<!--                            <button type="reset">remove</button>-->
+                            &lt;!&ndash;                            <button type="reset">remove</button>&ndash;&gt;
                         </td>
                     </tr>
 
@@ -446,7 +533,7 @@
                         <td>3</td>
                         <td>6000</td>
                         <td>
-<!--                            <button type="reset">remove</button>-->
+                            &lt;!&ndash;                            <button type="reset">remove</button>&ndash;&gt;
                         </td>
                     </tr>
 
@@ -456,13 +543,13 @@
             </div>
 
             <section class="col">
-                <div class="box-container">
+                <div class="box-container card m-4">
                     <h5>PAYMENT</h5>
                     <form>
 
                         <div class="mb-3 row" >
-                            <label for="netTotal" class="form-label col">Net Total: <span id="netTotal">....</span></label>
-                            <label for="subTotal" class="form-label col">Sub Total: <span id="subTotal">....</span></label>
+                            <label for="netTotal" class="form-label col fw-bold">Net Total: <span id="netTotal">....</span></label>
+                            <label for="subTotal" class="form-label col fw-bold">Sub Total: <span id="subTotal">....</span></label>
                         </div>
 
                         <div class="row">
@@ -490,6 +577,7 @@
     </div>
 </main>
 
+-->
 
 
 

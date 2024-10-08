@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POS-web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/styles.css" rel="stylesheet">
+</head>
+
+<body>
+<!-------------------------------------------HEADER SECTION-------------------------------------------------------->
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="navBar" id="navBar">
+    <div class="container">
+        <a class="navbar-brand" href="#homeSection">SD POS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link  aria-current="page" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"" href="order.html">ORDERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customer.html">CUSTOMER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="item.html">ITEM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> ORDER_DETAIL</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-----------------------------------------ORDER SECTION------------------------------------------------------------>
+<main id="orderSection">
+    <h1 class="text-center">PLACE ORDER</h1>
+    <!--section col one-->
+    <div class="row container-fluid">
+        <!--2 SECTIONS-->
+        <div class="row  col col-lg-6 col-md-12 col-sm-12 col-12 col">
+            <!--INVOICE SECTION-->
+            <section class="container" class="col" >
+
+                <div class="box-container card">
+                    <h5>INVOICE DETAILS</h5>
+                    <form>
+                        <div class="row">
+                            <div class="mb-3 col ">
+                                <label for="inputOrderId" class="form-label">Order Id</label>
+                                <input type="text" class="form-control" id="inputOrderId" aria-describedby="idHelp">
+                            </div>
+                            <div class="mb-3 col">
+                                <label for="inputDate" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="inputDate">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputCustomerId1" class="form-label">Customer Id</label>
+                                <input type="text" class="form-control" id="inputCustomerId1">
+                            </div>
+
+                            <div class="mb-3 col" >
+                                <label for="inputQty" class="form-label">Customer Name</label>
+                                <select class="form-select" id="custId">
+                                    <option selected>select the customer</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+
+                <div class="box-container card">
+                    <h5>ITEM DETAILS</h5>
+                    <form>
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputCode1" class="form-label">Item Code</label>
+                                <select class="form-select" id="inputCode1">
+                                    <option selected>select the Coder</option>
+
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="inputDesc1" class="form-label">Description</label>
+                                <input type="date" class="form-control" id="inputDesc1">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputQtyOnHand" class="form-label">Qty OnHand</label>
+                                <input type="text" class="form-control" id="inputQtyOnHand">
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="inputUnitPrice" class="form-label">Unit Price</label>
+                                <input type="text" class="form-control" id="inputUnitPrice" aria-describedby="idHelp">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputOrderQty" class="form-label">Order Qty</label>
+                                <input type="text" class="form-control" id="inputOrderQty" aria-describedby="idHelp">
+                            </div>
+
+                            <div class="col pt-4">
+
+                                <button type="button" class="btn btn-primary">Add To Cart</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+
+        <!--section col 2 -->
+        <div class="col">
+            <div class="border-dark rounded-2 odTable box-container ">
+                <h5>ITEM DETAILS</h5>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">DESC</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">QTY</th>
+                        <th scope="col">TOTAL</th>
+                        <th scope="col">REMOVE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">SOAP</th>
+                        <td>200</td>
+                        <td>3</td>
+                        <td>6000</td>
+                        <td>
+                            <!--                            <button type="reset">remove</button>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SOAP</th>
+                        <td>200</td>
+                        <td>3</td>
+                        <td>6000</td>
+                        <td>
+                            <!--                            <button type="reset">remove</button>-->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">SOAP</th>
+                        <td>200</td>
+                        <td>3</td>
+                        <td>6000</td>
+                        <td>
+                            <!--                            <button type="reset">remove</button>-->
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <section class="col">
+                <div class="box-container card m-4">
+                    <h5>PAYMENT</h5>
+                    <form>
+
+                        <div class="mb-3 row" >
+                            <label for="netTotal" class="form-label col fw-bold">Net Total: <span id="netTotal">....</span></label>
+                            <label for="subTotal" class="form-label col fw-bold">Sub Total: <span id="subTotal">....</span></label>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col">
+                                <label for="inputDiscount" class="form-label">Discout:</label>
+                                <input type="text" class="form-control" id="inputDiscount">
+                            </div>
+                            <div class="mb-3 col">
+                                <label for="inputCash" class="form-label ">Cash:</label>
+                                <input type="text" class="form-control" id="inputCash">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-4">
+                            <label for="inputBalance" class="form-label">Balance:</label>
+                            <input type="text" class="form-control" id="inputBalance" aria-describedby="idHelp">
+                        </div>
+
+
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
