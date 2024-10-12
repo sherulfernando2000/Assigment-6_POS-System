@@ -150,7 +150,6 @@ i{
 }
 
 @media (max-width: 768px) {
-    /* Further reduce the text size */
 
     main{
         height: max-content;
@@ -163,14 +162,14 @@ i{
         font-size: 1.2rem;
     }
 
-    /* Reduce the padding inside the table */
+
     table.table th,
     table.table td {
         padding: 0.4rem;
         font-size: 0.8rem; /* Reduce the font size more for smaller tablets */
     }
 
-    /* Stack the sections vertically */
+
     .crudSection {
         width: 100%; /* Ensure the form sections take up full width on smaller devices */
         margin: 0.5rem; /* Reduce margin */
@@ -179,18 +178,18 @@ i{
 
 /* Media query for small smartphones (375px width) */
 @media (max-width: 375px) {
-    /* Reduce heading sizes */
+
     h1, h5 {
         font-size: 1.2rem; /* Smaller heading size for mobile */
     }
 
-    /* Adjust the form inputs */
+
     form input.form-control {
         font-size: 0.85rem; /* Reduce input field font size */
         padding: 0.3rem; /* Reduce padding inside input fields */
     }
 
-    /* Adjust the table */
+
     table.table {
         font-size: 0.75rem; /* Reduce table font size for mobile */
     }
@@ -200,24 +199,23 @@ i{
         padding: 0.3rem; /* Smaller padding for compact look */
     }
 
-    /* Reduce button size */
+
     .mybutton {
         font-size: 0.8rem; /* Smaller button text */
         padding: 0.3rem 0.6rem; /* Smaller padding */
     }
 
-    /* Stack sections vertically */
+
     .crudSection {
         width: 100%; /* Make sections take full width */
         margin: 0.5rem 0; /* Smaller margin */
     }
 
-    /* Add horizontal scrolling for tables */
-    .Table {
+    Table {
         overflow-x: auto; /* Adds horizontal scrolling for smaller devices */
     }
 
-    /* Adjust the container and general spacing */
+
     .container, .container-fluid {
         padding: 0.5rem; /* Reduce padding inside containers */
     }
@@ -225,18 +223,18 @@ i{
 
 /* Media query for very small smartphones (320px width) */
 @media (max-width: 320px) {
-    /* Further reduce heading sizes */
+
     h1, h5 {
         font-size: 1rem !important;/* Very small heading size */
     }
 
-    /* Adjust form inputs even more */
+
     form input.form-control {
         font-size: 0.75rem !important; /* Further reduce input field font size */
         padding: 0.2rem  !important; /* Reduce padding even more */
     }
 
-    /* Further reduce table size */
+
     table.table {
         font-size: 0.7rem  !important; /* Smallest table font size */
     }
@@ -246,19 +244,19 @@ i{
         padding: 0.2rem  !important; /* Reduce padding inside table cells */
     }
 
-    /* Smaller button text */
+
     .mybutton {
         font-size: 0.7rem  !important; /* Even smaller button text */
         padding: 0.25rem 0.5rem  !important; /* Smaller button padding */
     }
 
-    /* Stack sections with even less margin */
+
     .crudSection {
         width: 100%  !important;
         margin: 0.25rem 0  !important; /* Further reduce margin between sections */
     }
 
-    /* More compact containers */
+
     .container, .container-fluid {
         padding: 0.25rem  !important; /* Reduce padding to fit content */
     }
