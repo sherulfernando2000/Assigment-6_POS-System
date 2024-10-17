@@ -4,9 +4,41 @@ body{
     color: #ffffff;
 }
 
+main{
+
+}
+
+
 #navBar{
     /*background-color: rgba(0, 0, 0, 0.55);*/
     background: linear-gradient(180deg, rgba(20, 109, 135, 0.89) 3%, rgba(6,42,48,1) 74%);
+}
+
+
+
+#homeSection {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("assets/store.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+.navbar{
+    cursor: pointer;
+}
+
+#homeSection h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+#homeSection p {
+    font-size: 1.5rem;
 }
 
 .crudSection{
