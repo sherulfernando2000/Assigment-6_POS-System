@@ -235,7 +235,7 @@
                 </div>
                 <div class="mb-3 col">
                     <label for="inputCustomerName1" class="form-label"> Name</label>
-                    <input type="text" class="form-control" id="inputCustomerName1">
+                    <input type="text" class="form-control" id="inputCustomerName1" readonly>
                 </div>
 
 
@@ -304,7 +304,7 @@
                 <form>
                     <div class="mb-3 ">
                         <label for="inputItemId" class="form-label">Item Code</label>
-                        <input type="text" class="form-control" id="inputItemId" aria-describedby="idHelp">
+                        <input type="text" class="form-control" id="inputItemId" aria-describedby="idHelp" readonly>
                     </div>
                     <div class="mb-3 ">
                         <label for="inputItemDesc" class="form-label">Description</label>
@@ -322,10 +322,10 @@
 
                     <div >
 
-                        <button type="button" class="btn btn-success btn-sm mybutton">SAVE</button>
-                        <button type="button" class="btn btn-success btn-sm mybutton">UPDATE</button>
-                        <button type="button" class="btn btn-danger btn-sm mybutton">DELETE</button>
-                        <button type="reset" class="btn btn-success btn-sm mybutton">CLEAR</button>
+                        <button type="button" class="btn btn-success btn-sm mybutton" id="btn_save_item">SAVE</button>
+                        <button type="button" class="btn btn-success btn-sm mybutton" id="btn_update_item">UPDATE</button>
+                        <button type="button" class="btn btn-danger btn-sm mybutton" id="btn_delete_item">DELETE</button>
+                        <button type="button" class="btn btn-success btn-sm mybutton" id="btn_clear_item">CLEAR</button>
                     </div>
 
                 </form>
@@ -350,7 +350,7 @@
 
             <!--TABLE SECTION-->
             <div class="border-dark rounded-2 cusTable ">
-                <table class="table">
+                <table class="table" id="itemTable">
                     <thead>
                     <tr>
                         <th scope="col">CODE</th>
@@ -359,7 +359,7 @@
                         <th scope="col">QTY</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="itemTableBody">
                     <tr>
                         <th scope="row">I001</th>
                         <td>Soap</td>
@@ -492,7 +492,7 @@
         <!--section col 2 -->
         <div class="col">
             <div class="border-dark rounded-2 odTable box-container ">
-                <h5>ITEM DETAILS</h5>
+                <h5>CART</h5>
                 <table class="table">
                     <thead>
                     <tr>
@@ -616,8 +616,10 @@
 
 </script>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
-<script src="script.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!--<script src="script.js"></script>-->
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
 
 </body>
 </html>
