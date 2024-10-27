@@ -3,9 +3,11 @@
 //item array
 import {customer_array, item_array} from "../db/database.js";
 import ItemModel from "../models/ItemModel.js";
+import {loadItemCbx} from "./OrderController.js";
 
 
 $(document).ready(function (){
+    console.log(generateItemId());
     $("#inputItemId").val(generateItemId());
 })
 
@@ -68,6 +70,7 @@ $("#btn_save_item").on('click',function (){
         });
         clearField();
         setId();
+        loadItemCbx();
     }
 
 

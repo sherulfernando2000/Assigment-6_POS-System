@@ -412,7 +412,7 @@
                         <div class="row">
                             <div class="mb-3 col ">
                                 <label for="inputOrderId" class="form-label">Order Id</label>
-                                <input type="text" class="form-control" id="inputOrderId" aria-describedby="idHelp">
+                                <input type="text" class="form-control" id="inputOrderId" aria-describedby="idHelp" readonly>
                             </div>
                             <div class="mb-3 col">
                                 <label for="inputDate" class="form-label">Date</label>
@@ -422,16 +422,13 @@
 
                         <div class="row">
                             <div class="mb-3 col">
-                                <label for="inputCustomerId1" class="form-label">Customer Id</label>
-                                <input type="text" class="form-control" id="inputCustomerId1">
+                                <label for="inputCustomerTelephone1" class="form-label">Customer Number</label>
+                                <input type="text" class="form-control" id="inputCustomerTelephone1">
                             </div>
 
                             <div class="mb-3 col" >
-                                <label for="custId" class="form-label">Customer Name</label>
-                                <select class="form-select" id="custId">
-                                    <option selected>select the customer</option>
-
-                                </select>
+                                <label for="inputCustomerName2" class="form-label">Customer Name</label>
+                                <input type="text" class="form-control" id="inputCustomerName2">
                             </div>
                         </div>
 
@@ -447,14 +444,14 @@
                             <div class="mb-3 col">
                                 <label for="inputCode1" class="form-label">Item Code</label>
                                 <select class="form-select" id="inputCode1">
-                                    <option selected>select the Coder</option>
+                                    <option> code</option>
 
                                 </select>
                             </div>
 
                             <div class="mb-3 col">
                                 <label for="inputDesc1" class="form-label">Description</label>
-                                <input type="date" class="form-control" id="inputDesc1">
+                                <input type="text" class="form-control" id="inputDesc1" readonly>
                             </div>
                         </div>
 
@@ -462,12 +459,12 @@
                         <div class="row">
                             <div class="mb-3 col">
                                 <label for="inputQtyOnHand" class="form-label">Qty OnHand</label>
-                                <input type="text" class="form-control" id="inputQtyOnHand">
+                                <input type="text" class="form-control" id="inputQtyOnHand" readonly>
                             </div>
 
                             <div class="mb-3 col">
                                 <label for="inputUnitPrice" class="form-label">Unit Price</label>
-                                <input type="text" class="form-control" id="inputUnitPrice" aria-describedby="idHelp">
+                                <input type="text" class="form-control" id="inputUnitPrice" aria-describedby="idHelp" readonly>
                             </div>
                         </div>
 
@@ -480,7 +477,7 @@
 
                             <div class="col pt-4">
 
-                                <button type="button" class="btn btn-primary">Add To Cart</button>
+                                <button type="button" class="btn btn-primary" id="btn_addCart">Add To Cart</button>
                             </div>
                         </div>
                     </form>
@@ -496,14 +493,14 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">DESC</th>
+                        <th scope="col">ID</th>
                         <th scope="col">PRICE</th>
                         <th scope="col">QTY</th>
                         <th scope="col">TOTAL</th>
                         <th scope="col">REMOVE</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="cartTableBody">
                     <tr>
                         <th scope="row">SOAP</th>
                         <td>200</td>
@@ -620,6 +617,7 @@
 <!--<script src="script.js"></script>-->
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
 
 </body>
 </html>
