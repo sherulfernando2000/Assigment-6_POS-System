@@ -1,9 +1,8 @@
-class OrderModel{
+export default class OrderModel{
     constructor(id,date,total,cusId) {
         this._id = id;
         this._date = date;
         this._total = total;
-        this._cusId = cus_id;
         this._cusId = cusId;
     }
 

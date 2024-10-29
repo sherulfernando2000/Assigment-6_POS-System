@@ -428,7 +428,7 @@
 
                             <div class="mb-3 col" >
                                 <label for="inputCustomerName2" class="form-label">Customer Name</label>
-                                <input type="text" class="form-control" id="inputCustomerName2">
+                                <input type="text" class="form-control" id="inputCustomerName2" readonly>
                             </div>
                         </div>
 
@@ -502,32 +502,27 @@
                     </thead>
                     <tbody id="cartTableBody">
                     <tr>
-                        <th scope="row">SOAP</th>
-                        <td>200</td>
-                        <td>3</td>
-                        <td>6000</td>
-                        <td>
-                            <!--                            <button type="reset">remove</button>-->
-                        </td>
+                        <th scope="row">---</th>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+<!--                        <td>&lt;!&ndash;                            <button type="reset">remove</button>&ndash;&gt;</td>-->
                     </tr>
                     <tr>
-                        <th scope="row">SOAP</th>
-                        <td>200</td>
-                        <td>3</td>
-                        <td>6000</td>
-                        <td>
-                            <!--                            <button type="reset">remove</button>-->
-                        </td>
+                        <th scope="row">---</th>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
                     </tr>
 
                     <tr>
-                        <th scope="row">SOAP</th>
-                        <td>200</td>
-                        <td>3</td>
-                        <td>6000</td>
-                        <td>
-                            <!--                            <button type="reset">remove</button>-->
-                        </td>
+                        <th scope="row">---</th>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
                     </tr>
 
                     </tbody>
@@ -556,11 +551,17 @@
                             </div>
                         </div>
 
-                        <div class="mb-3 col-4">
+
+                        <div class="row">
+                        <div class="mb-3 col-6 col">
                             <label for="inputBalance" class="form-label">Balance:</label>
-                            <input type="text" class="form-control" id="inputBalance" aria-describedby="idHelp">
+                            <input type="text" class="form-control" id="inputBalance" aria-describedby="idHelp" readonly>
                         </div>
 
+                        <div class="col pt-4 ">
+                            <button type="button" class="btn btn-primary" id="btn_placeOrder">Place Order</button>
+                        </div>
+                        </div>
 
                     </form>
                 </div>
@@ -569,6 +570,7 @@
 
     </div>
 </main>
+
 
 
 

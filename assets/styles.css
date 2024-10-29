@@ -159,6 +159,10 @@ i{
     /*background-color: rgba(120, 227, 78, 0.44);*/
 }
 
+#btn_placeOrder{
+    margin-top: 0.5rem;
+}
+
 @media (max-width: 320px) {
     button{
         /*width: ;*/

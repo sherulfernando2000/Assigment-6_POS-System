@@ -236,7 +236,6 @@ $("#inputCustomerTel").on('keypress', function (e){
 
 
 function searchCustomer(telephoneNo){
-
     $("#customerTableBody").empty()
     let customer = customer_array.find(customer => customer._telephone === telephoneNo);
     let data = `<tr>
@@ -247,5 +246,7 @@ function searchCustomer(telephoneNo){
                            </tr>`
     $("#customerTableBody").append(data);
     $("#inputCustomerName1").val(customer._name);
-
 }
+
+
+

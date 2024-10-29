@@ -1,9 +1,12 @@
 
 import {order_array,orderDetail_array,customer_array,item_array} from "../db/database.js";
+import OrderModel from "../models/OrderModel.js";
+import OrderDetailsModel from "../models/OrderDetailsModel.js";
 
-$("inputCode1")
+//$("inputCode1")
 
-
+let subTotal;
+let cart_array = [];
 
 
 $(document).ready(function (){
@@ -22,11 +25,13 @@ function setOrderId(){
 }
 
 $("#inputCustomerTelephone1").on('keypress', function (e){
-    if(e.which === 13 ){
+    if(e.which == 13 ){
         let telephoneNo = $(this).val();
-        searchCustomer(telephoneNo);
-    }else{
-        Alert("Customer not found");
+
+        if(!searchCustomer(telephoneNo)){
+            alert("No customer found.")
+        };
+
     }
 });
 
@@ -34,14 +39,22 @@ $("#inputCustomerTelephone1").on('keypress', function (e){
 function searchCustomer(telephoneNo){
 
     let customer = customer_array.find(customer => customer._telephone === telephoneNo);
+    console.log(customer);
+    if(customer !== undefined){
+        $("#inputCustomerName2").val(customer._name);
+        cusId = customer._id;
+        return true;
+    }else {
+        return false;
+    }
 
-    $("#inputCustomerName2").val(customer._name);
 
 }
 
 export function loadItemCbx(){
     console.log("2");
     $("#inputCode1").empty();
+    $("#inputCode1").append(`<option>select a item</option>`);
     item_array.map((item, number) => {
         let data = ` <option>${item._code}</option>`
 
@@ -68,7 +81,7 @@ $("#inputCode1").on('input', function (){
     }
 })
 
-let cart_array = [];
+
 
 $("#btn_addCart").on('click', function (){
     let itemId = $("#inputCode1").val();
@@ -123,10 +136,20 @@ function loadCart(){
     })
 }
 
+let netTotal=0;
 
 function setTotalValues(){
-    let netTotal = calculateNetValue();
+     netTotal = calculateNetValue();
     $("#netTotal").text(`${netTotal}`);
+
+   /* let dis = +$("#inputDiscount").val()/100 ;
+    if(dis == 0 ){
+        dis =1;
+    }
+
+    let discount = netTotal * dis;
+    let subTotal = netTotal - discount;
+    $("#subTotal").text(`${subTotal}`);*/
 
 
 }
@@ -140,13 +163,181 @@ function calculateNetValue(){
     return total;
 }
 
+
+
+$("#inputDiscount").on('keypress', function (e){
+    if(e.which === 13 ){
+        let dis = +$("#inputDiscount").val();
+        if(!dis || dis == 0 ){
+            subTotal = netTotal;
+            $("#subTotal").text(`${subTotal}`);
+        }else{
+            dis = dis/100;
+            let discount = netTotal * dis;
+            subTotal = netTotal - discount;
+            $("#subTotal").text(`${subTotal}`);
+        }
+
+
+
+}});
+
 function clearItemSection(){
+    $("#inputDesc1").val("");
+    $("#inputQtyOnHand").val("");
+    $("#inputUnitPrice").val("");
+    $("#inputUnitPrice").val("");
+    $("#inputOrderQty").val("");
 
 }
 
+$("#inputCash").on('keypress', function (e){
+    if (e.which == 13){
+        let cash = $("#inputCash").val();
+        if (cash>subTotal){
+            let balance = cash - subTotal;
+            $("#inputBalance").val(balance);
+        }else{
+            alert("insufficient input to cash");
+        }
+    }
+})
+
+$("#btn_placeOrder").on('click', function (){
+    let cusNumber = $("#inputCustomerTelephone1").val();
+    let date = $("#inputDate").val();
+    let cusName = $("#inputCustomerName2").val();
+    console.log(date)
+    console.log(cusName);
+    let itemDesc = $("#inputDesc1").val();
+    let orderQty = $("#inputOrderQty").val();
+
+    let cartItems = cart_array.length;
+    let discount = $("#inputDiscount").val();
+    let cash = $("#inputCash").val();
+
+
+    if(!cusName){
+        Swal.fire({
+            icon: "error",
+            title: "Customer Name Field empty",
+            text: "Enter customer telephone number and press 'Enter Key' to search customer",
+
+        });
+
+    }else if(!date){
+        Swal.fire({
+            icon: "error",
+            title: "Date Field empty",
+            text: "Select a date from calendar",
+
+        });
+    }/*else if(!itemDesc){
+        Swal.fire({
+            icon: "error",
+            title: "Items Fields empty",
+            text: "Select a item from select box",
+
+        });
+    }*/else if(!discount){
+        Swal.fire({
+            icon: "error",
+            title: "Discount Fields empty",
+            text: "Enter discount amount",
+
+        });
+
+    }else if(cartItems == 0){
+        Swal.fire({
+            icon: "error",
+            title: "No items added to the cart",
+            text: "Add items to the cart",
+
+        });
+    }else if(!cash ){
+        Swal.fire({
+            icon: "error",
+            title: "Cash field is empty",
+            text: "Fill the cash field",
+
+        });
+    }else{
+        saveOrder();
+        saveOrderDetails();
+        setOrderId();
+        clearInvoiceDetails();
+        blankCart();
+        loadCart();
+        clearPaymentDetails();
+        console.log(order_array.length);
+        console.log(orderDetail_array.length);
+    }
 
 
 
+})
+
+let orderId = $("#inputOrderId").val();
+let date = $("#inputDate").val();
+let cusId;
+let itemId = $("#inputItemId").val();
+subTotal = $("#subTotal").val();
+
+function saveOrder(){
+    let order = new OrderModel(orderId,date,subTotal,cusId);
+    order_array.push(order);
+}
+
+function saveOrderDetails(){
+    cart_array.map((cartItem, number)=>{
+        let orderRow = new OrderDetailsModel(orderId,cartItem.itemId, cartItem.qty);
+        orderDetail_array.push(orderRow);
+    })
+}
+
+function clearInvoiceDetails() {
+    $("#inputCustomerTelephone1").val("");
+    $("#inputCustomerName2").val("");
+}
+
+function blankCart(){
+    cart_array = [];
+}
+
+function clearPaymentDetails(){
+    $("#netTotal").text("--");
+    $("#subTotal").text("--");
+    $("#inputDiscount").val("");
+    $("#inputCash").val("");
+    $("#inputBalance").val("");
+
+}
+
+/*let orderId = $("#inputOrderId").val();
+let date = $("#inputDate").val();
+let cusId;
+let itemId = $("#inputItemId").val();
+let subTotal = $("#subTotal").val();
+//cart_arrray
+
+function saveOrder(){
+    let order = new OrderModel(orderId,date,subTotal,cusId);
+    order_array.push(order);
+}
+
+function saveOrderDetails(){
+    cart_array.map((cartItem, number)=>{
+        let orderRow = new OrderDetailsModel(orderId,cartItem.itemId, cartItem.qty);
+        cart_array.push(orderRow);
+
+    })
+
+}*/
+
+
+//net total sub total reset wenna
+//itemCombox
+//itemUpdate wenna ona
 
 
 
