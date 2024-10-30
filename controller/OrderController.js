@@ -71,15 +71,17 @@ $("#inputCode1").on('input', function (){
     let id = $(this).val();
     let codeId = item_array.findIndex(item => item._code === id);
     if(codeId !== 'code' ){
-        $("#inputDesc1").val(item_array[codeId ]._desc);
+        $("#inputDesc1").val(item_array[codeId]._desc);
         $("#inputQtyOnHand").val(item_array[codeId]._qty);
         $("#inputUnitPrice").val(item_array[codeId]._price);
+        $("#inputOrderQty").focus();
 
     }else{
         $("#inputDesc1").val("");
         $("#inputQtyOnHand").val("");
         $("#inputUnitPrice").val("");
     }
+
 })
 
 
@@ -108,6 +110,7 @@ $("#btn_addCart").on('click', function (){
             loadCart();
             setTotalValues();
             clearItemSection();
+            $("#inputDiscount").focus();
         }else{
                 cart_array[cartIndex].qty = qty;
                 cart_array[cartIndex].total = cart_array[cartIndex].qty * price;
@@ -130,12 +133,20 @@ function loadCart(){
                                 <td>${cartItem.price}</td>
                                 <td>${cartItem.qty}</td>
                                 <td>${cartItem.total}</td>
-                                <td><button class="cart_remove" data-id="${cartItem.itemId}">Remove</button></td>
+                                <td><button class="cart_remove btn-danger" data-id="${cartItem.itemId}">Remove</button></td>
                             </tr>`
 
         $("#cartTableBody").append(data);
     })
 }
+
+$("#cartTableBody").on('click','button',function (){
+    const itId = $(this).data("id");
+    cart_array = cart_array.filter(cartItem => cartItem.itemId !== itId);
+    loadCart();
+    setTotalValues();
+})
+
 
 let netTotal=0;
 
@@ -143,6 +154,8 @@ function setTotalValues(){
      netTotal = calculateNetValue();
     $("#netTotal").text(`${netTotal}`);
 
+    subTotal = netTotal;
+    $("#subTotal").text(`${subTotal}`);
    /* let dis = +$("#inputDiscount").val()/100 ;
     if(dis == 0 ){
         dis =1;
@@ -178,7 +191,7 @@ $("#inputDiscount").on('keypress', function (e){
             subTotal = netTotal - discount;
             $("#subTotal").text(`${subTotal}`);
         }
-
+    $("#inputCash").focus();
 
 
 }});
