@@ -17,11 +17,11 @@ export default class ItemModel{
     }
 
     get desc(){
-        return this._code;
+        return this._desc;
     }
 
     set desc(value){
-        this._code = value;
+        this._desc = value;
     }
 
 

@@ -2,7 +2,6 @@
 
 /*--------------------------------------------customer section----------------------------------------------------------------------*/
 
-
 // customer array
 import {customer_array} from "../db/database.js";
 import CustomerModel from "../models/CustomerModel.js";

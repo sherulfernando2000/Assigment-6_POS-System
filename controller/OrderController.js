@@ -2,6 +2,7 @@
 import {order_array,orderDetail_array,customer_array,item_array} from "../db/database.js";
 import OrderModel from "../models/OrderModel.js";
 import OrderDetailsModel from "../models/OrderDetailsModel.js";
+import {setOrdersTable,setOrderDetailsTable} from "./OrderDetailController.js";
 
 //$("inputCode1")
 
@@ -264,26 +265,56 @@ $("#btn_placeOrder").on('click', function (){
     }else{
         saveOrder();
         saveOrderDetails();
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Order has been placed",
+            showConfirmButton: false,
+            timer: 1500
+        });
         setOrderId();
         clearInvoiceDetails();
+        updateItem();
         blankCart();
         loadCart();
         clearPaymentDetails();
         console.log(order_array.length);
         console.log(orderDetail_array.length);
+        setOrdersTable();
+        setOrderDetailsTable();
+
     }
 
 
 
 })
 
-let orderId = $("#inputOrderId").val();
-let date = $("#inputDate").val();
+
+function updateItem(){
+    cart_array.map((cartItem, number)=>{
+       let itemNumber = cartItem.itemId;
+       console.log(itemNumber);
+       let itemQty = cartItem.qty;
+        console.log(itemQty);
+
+       let item = item_array.find(item => item._code === itemNumber)
+        console.log(item._desc);
+       item._qty  = item._qty-itemQty;
+
+    })
+}
+
+
+let orderId ;
+let date ;
 let cusId;
 let itemId = $("#inputItemId").val();
 subTotal = $("#subTotal").val();
 
 function saveOrder(){
+    orderId = $("#inputOrderId").val()
+    date = $("#inputDate").val();
+    console.log(orderId);
     let order = new OrderModel(orderId,date,subTotal,cusId);
     order_array.push(order);
 }

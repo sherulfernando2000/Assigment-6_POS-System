@@ -571,6 +571,98 @@
     </div>
 </main>
 
+<!-----------------------------------------ORDER DETAIL SECTION------------------------------------------------------------>
+<main id="orderDetailSection" class="container">
+    <h1 class="text-center">ORDER DETAILS</h1>
+
+    <div class="row container-fluid">
+<!-- first section-->
+        <section  class="card crudSection m-1 card" >
+        <h5>ORDERS</h5>
+        <!--TABLE SECTION-->
+        <div class="border-dark rounded-2 Table" id="orderTable">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ORDER ID</th>
+                    <th scope="col">CUSTOMER ID</th>
+                    <th scope="col">TOTAL</th>
+                    <th scope="col">DATE</th>
+                </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                <tr>
+                    <th scope="row">----</th>
+                    <td>----</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <th scope="row">----</th>
+                    <td>----</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <th scope="row">----</th>
+                    <td>----</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        </section>
+
+
+        <section class="card crudSection  card m-1">
+            <h5>ORDERS Details</h5>
+            <div class="border-dark rounded-2 Table" id="orderDetailsTable">
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ORDER ID</th>
+                        <th scope="col">ITEM ID</th>
+                        <th scope="col">QUANTITY</th>
+
+                    </tr>
+                    </thead>
+                    <tbody id="orderDetailsTableBody">
+                    <tr>
+                        <th scope="row">----</th>
+                        <td>----</td>
+                        <td>----</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">----</th>
+                        <td>----</td>
+                        <td>----</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">----</th>
+                        <td>----</td>
+                        <td>----</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    </div>
+
+</main>
 
 
 
@@ -579,12 +671,16 @@
     document.getElementById("customerSection").style.display = "none";
     document.getElementById("itemSection").style.display = "none";
     document.getElementById("orderSection").style.display = "none";
+    document.getElementById("orderDetailSection").style.display = "none";
+
 
     document.getElementById("home_nav").addEventListener("click",function (){
         document.getElementById("homeSection").style.display = "flex";
         document.getElementById("customerSection").style.display = "none";
         document.getElementById("itemSection").style.display = "none";
         document.getElementById("orderSection").style.display = "none";
+        document.getElementById("orderDetailSection").style.display = "none";
+
 
     })
 
@@ -594,6 +690,7 @@
         document.getElementById("customerSection").style.display = "block";
         document.getElementById("itemSection").style.display = "none";
         document.getElementById("orderSection").style.display = "none";
+        document.getElementById("orderDetailSection").style.display = "none";
 
     })
 
@@ -602,6 +699,7 @@
         document.getElementById("customerSection").style.display = "none";
         document.getElementById("itemSection").style.display = "block";
         document.getElementById("orderSection").style.display = "none";
+        document.getElementById("orderDetailSection").style.display = "none";
 
     })
 
@@ -610,6 +708,16 @@
         document.getElementById("customerSection").style.display = "none";
         document.getElementById("itemSection").style.display = "none";
         document.getElementById("orderSection").style.display = "block";
+        document.getElementById("orderDetailSection").style.display = "none";
+
+    })
+
+    document.getElementById("orderDetail_nav").addEventListener("click",function (){
+        document.getElementById("homeSection").style.display = "none";
+        document.getElementById("customerSection").style.display = "none";
+        document.getElementById("itemSection").style.display = "none";
+        document.getElementById("orderSection").style.display = "none";
+        document.getElementById("orderDetailSection").style.display = "block";
 
     })
 
@@ -620,6 +728,7 @@
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
 <script type="module" src="controller/OrderController.js"></script>
+<script type="module" src="controller/OrderDetailController.js"></script>
 
 </body>
 </html>

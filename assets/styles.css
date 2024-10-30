@@ -91,6 +91,10 @@ main{
     height:max-content;
 }
 
+#orderDetailSection{
+    height: 110vh;
+}
+
 main{
     margin: auto;
     width:90vw;

@@ -7,6 +7,10 @@ import {loadItemCbx} from "./OrderController.js";
 
 
 $(document).ready(function (){
+    $("#item_nav").on('click', function (){
+        loadItemTable();
+    })
+
     console.log(generateItemId());
     $("#inputItemId").val(generateItemId());
 })
