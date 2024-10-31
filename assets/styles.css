@@ -167,6 +167,15 @@ i{
     margin-top: 0.5rem;
 }
 
+#lblNet, #lblSub{
+    font-size: 1.1rem;
+}
+
+#netTotal, #subTotal{
+    font-size: 1.6rem;
+}
+
+
 @media (max-width: 320px) {
     button{
         /*width: ;*/
